@@ -30,7 +30,6 @@ for line in fr:
 
 		
 fw = open('result.json','w')
-print (json.dumps(stat))
 fw.write(json.dumps(stat))
 fw.close()	
 	
