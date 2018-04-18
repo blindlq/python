@@ -1,4 +1,5 @@
 #!usr/bin/env python
+
 # coding:utf8
 
 import sys
@@ -15,7 +16,6 @@ from bs4 import BeautifulSoup
 tags = [];
 url = 'https://movie.douban.com/j/search_tags?type=movie'
 request = urllib2.Request(url=url)
-
 response =urllib2.urlopen(request,timeout=20)
 result = json.loads(response.read())
 tags = result['tags']
@@ -59,8 +59,9 @@ fw = open('moves.txt','w')
 
 for item in movies:
     tmp = ''
-    for key,value in item.ites():
-        tmp += value+','
+    for key,value in item.items():
+        tmp += str(value) + ','
+		
     fw.write(tmp[:-1]+'\n')
 
 
